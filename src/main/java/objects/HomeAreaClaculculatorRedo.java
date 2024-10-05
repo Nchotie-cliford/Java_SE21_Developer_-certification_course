@@ -1,18 +1,31 @@
 package objects;
 
-public class HomeAreaClaculculator {
+import java.util.Scanner;
+
+public class HomeAreaClaculculatorRedo {
+    private Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Rectangle roome1  = new Rectangle();
-        roome1.setLength(50);
-        roome1.setWidth(25);
-        double areaOfRoome1 = roome1.calculateArea();
+       HomeAreaClaculculatorRedo calculator = new HomeAreaClaculculatorRedo();
+       Rectangle room1 = calculator.getRoom();
+       Rectangle room2 = calculator.getRoom();
+       double totalArea = calculator.calculateAreaOfRoom(room1, room2);
+       System.out.println("Area of both rooms; " + totalArea);
 
-        Rectangle roome2  = new Rectangle();
-        double areaOfRoome2 = roome2.calculateArea();
+    }
 
-        double totalArea = areaOfRoome1 + areaOfRoome2;
-        System.out.println("Total area: " + totalArea);
+    public Rectangle getRoom() {
+        System.out.println("Enter the length of the room");
+        double length = scanner.nextDouble();
+        System.out.println("Enter the width of the room");
+        double width = scanner.nextDouble();
+
+        return new Rectangle(length, width);
+
+    }
+
+    public double calculateAreaOfRoom(Rectangle roome1, Rectangle roome2) {
+        return roome1.calculateArea() + roome2.calculateArea();
 
     }
 
