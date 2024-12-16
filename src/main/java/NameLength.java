@@ -4,6 +4,13 @@ public class NameLength {
         String name = "Charlie";
         int length = name.length();
 
-        System.out.println("your name length is " + length);
+        int x = 2;
+        if (x == 5) ;
+        {
+            System.out.println("I am good");
+        }
+        System.out.println("I am average");
+
+        //System.out.println("your name length is " + length);
     }
 }
